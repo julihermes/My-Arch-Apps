@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Microsoft 365
+Exec=/opt/MS-365-Electron/ms-365-electron %U
+Terminal=false
+Type=Application
+Icon=ms-365-electron
+StartupWMClass=MS-365-Electron
+Comment=Unofficial Microsoft 365 Web Desktop Wrapper made with Electron
+Categories=Office;
