@@ -15,7 +15,7 @@ main_stage=(
     microsoft-edge-stable-bin
     ms-365-electron-bin
     zapzap
-    ytmdesktop
+    telegram-desktop
 )
 
 # Set some colors
@@ -122,9 +122,9 @@ sudo systemctl enable keyd
 echo -e "$CNT - Coping hypr autostart file..."
 cp -f configs/hypr/autostart.conf ~/.config/hypr/configs/autostart.conf
 
-# Copy MS 365 .desktop file
-echo -e "$CNT - Coping MS 365 desktop file..."
-cp -f configs/ms-365-electron.desktop ~/.local/share/applications/ms-365-electron.desktop
+# Copy .desktop files
+echo -e "$CNT - Coping .desktop files..."
+cp -f configs/*.desktop ~/.local/share/applications/
 
 # Script is done
 echo -e "$CNT - Script had completed!"
