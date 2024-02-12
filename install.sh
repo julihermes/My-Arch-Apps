@@ -2,6 +2,8 @@
 
 clear
 
+echo -e "MY PERSONAL ARCH APPS"
+
 # The main packages
 main_stage=(
     keyd
