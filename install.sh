@@ -16,6 +16,7 @@ main_stage=(
     ms-365-electron-bin
     zapzap
     telegram-desktop
+    ytmdesktop
 )
 
 # Set some colors
@@ -46,6 +47,15 @@ install_software() {
     else
         # No package found so installing
         echo -en "$CNT - Now installing $1 ."
+        if [[ $1 == "ytmdesktop" ]]; then
+            sudo rm -f /usr/lib/debug/.build-id/32/*
+            sudo rm -f /usr/lib/debug/.build-id/36/*
+            sudo rm -f /usr/lib/debug/.build-id/73/*
+            sudo rm -f /usr/lib/debug/.build-id/5c/*
+            sudo rm -f /usr/lib/debug/.build-id/a2/*
+            sudo rm -f /usr/lib/debug/.build-id/c0/*
+            sudo rm -f /usr/lib/debug/.build-id/f4/*
+        fi
         yay -S --noconfirm $1 &>> $INSTLOG &
         show_progress $!
         # Test to make sure package installed
