@@ -130,8 +130,9 @@ sudo cp configs/keyd.config /etc/keyd/default.conf
 sudo systemctl enable keyd
 
 # Copy hypr autostart
-echo -e "$CNT - Coping hypr autostart file..."
+echo -e "$CNT - Coping hypr's files..."
 cp -f configs/hypr/autostart.conf ~/.config/hypr/configs/autostart.conf
+cp -f configs/hypr/window.conf ~/.config/hypr/configs/window.conf
 
 # Copy .desktop files
 echo -e "$CNT - Coping .desktop files..."
