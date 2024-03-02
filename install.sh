@@ -7,8 +7,10 @@ echo -e "MY PERSONAL ARCH APPS"
 # The main packages
 main_stage=(
     keyd
-    neovim
     lsd
+    zoxide
+    fzf
+    neovim
     gnome-disk-utility
     enpass-bin
     google-chrome
@@ -73,7 +75,7 @@ install_software() {
 read -rep $'[\e[1;33mACTION\e[0m] - Would you like to continue with the install (y,n) ' CONTINST
 if [[ $CONTINST == "Y" || $CONTINST == "y" ]]; then
     echo -e "$CNT - Starting..."
-    sudo touch /tmp/hyprv.tmp
+    sudo touch /tmp/simple-hypr.tmp
 else
     echo -e "$CNT - This script will now exit, no changes were made to your system."
     exit
@@ -121,8 +123,9 @@ for SOFTWR in ${main_stage[@]}; do
 done
 
 # Copy .bachrc
-echo -e "$CNT - Coping .bachrc file..."
-cp -f configs/.bashrc ~/.bashrc
+echo -e "$CNT - Coping zsh config..."
+cp -raf configs/zsh/. ~/.config/zsh/
+zsh &
 
 # Enable and congif keyd
 echo -e "$CNT - Coping keyd.config file and enable it..."
